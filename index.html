@@ -58,6 +58,12 @@
         #no-btn:hover {
             background-color: #d32f2f;
         }
+
+        #message {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -67,9 +73,16 @@
             <button id="yes-btn">Sim</button>
             <button id="no-btn">Não</button>
         </div>
+        <div id="message"></div>
     </div>
     <script>
+        const yesButton = document.getElementById('yes-btn');
         const noButton = document.getElementById('no-btn');
+        const messageDiv = document.getElementById('message');
+
+        yesButton.addEventListener('click', () => {
+            messageDiv.textContent = "Marcado, fim de semana estarei ai minha princesa";
+        });
 
         noButton.addEventListener('mouseenter', () => {
             const container = document.querySelector('.container');
