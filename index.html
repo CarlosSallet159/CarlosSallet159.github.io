@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite Especial</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #yes-btn {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        #yes-btn:hover {
+            background-color: #45a049;
+        }
+
+        #no-btn {
+            background-color: #f44336;
+            color: white;
+        }
+
+        #no-btn:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Aceita sair comigo, Gabriela?</h1>
+        <div class="buttons">
+            <button id="yes-btn">Sim</button>
+            <button id="no-btn">Não</button>
+        </div>
+    </div>
+    <script>
+        const noButton = document.getElementById('no-btn');
+
+        noButton.addEventListener('mouseenter', () => {
+            const container = document.querySelector('.container');
+            const containerRect = container.getBoundingClientRect();
+
+            const randomX = Math.random() * (containerRect.width - noButton.offsetWidth);
+            const randomY = Math.random() * (containerRect.height - noButton.offsetHeight);
+
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        });
+    </script>
+</body>
+</html>
